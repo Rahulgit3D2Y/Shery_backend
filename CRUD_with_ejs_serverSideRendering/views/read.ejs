@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+
+<body class="bg-gray-900">
+    <div class="container mx-auto px-4 py-8">
+        <div class="flex items-center justify-between mb-4">
+            <a class="text-blue-700 hover:text-blue-900" href="/">Home</a>
+            <h1 class="text-white text-3xl font-bold">All Users</h1>
+        </div>
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+            <% if(users.length> 0) { %>
+                <% users.forEach(function (user) { %>
+                    <div
+                        class="bg-gray-700 rounded-lg overflow-hidden shadow-lg transition-transform duration-300 ease-in-out transform hover:scale-105">
+                        <div
+                            class="bg-gradient-to-r from-purple-500 via-purple-600 to-indigo-600 w-full h-40 flex items-center justify-center">
+                            <img src="<%= user.imageUrl %>" alt="" class="max-h-full max-w-full rounded-t-lg">
+                        </div>
+                        <div class="p-4">
+                            <h2 class="text-white text-lg font-semibold mb-2">
+                                <%= user.name %>
+                            </h2>
+                            <p class="text-gray-300">
+                                <%= user.email %>
+                            </p>
+                            <div class="mt-4">
+                                <a class="text-blue-700 hover:text-blue-900 mr-2" href="/edit/<%= user._id %>">Edit
+                                    User</a>
+                                <a class="text-red-700 hover:text-red-900" href="/delete/<%= user._id %>">Delete
+                                    User</a>
+                            </div>
+                        </div>
+                    </div>
+                    <% }) %>
+                        <% } else { %>
+                            <h1 class="text-blue-700 text-2xl">No users created</h1>
+                            <% } %>
+        </div>
+    </div>
+</body>
+
+</html>
