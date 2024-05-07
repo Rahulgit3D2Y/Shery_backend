@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create User</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+
+<body class="w-full bg-gray-900 text-white min-h-screen p-10">
+    <h3>Upload profile Picture</h3>
+    <form action="/upload" method="post" enctype="multipart/form-data">
+        <input type="file" name="image">
+        <input class="px-3 py-2 w-40 bg-blue-500 block rounded-md text-sm mt-2" type="submit" value="Upload image">
+    </form>
+
+</body>
+
+</html>

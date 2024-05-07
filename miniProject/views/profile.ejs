@@ -13,8 +13,14 @@
         <a class="bg-red-500 rounded-md px-2 py-2 mb-5 inline-block" href="/logout">logout</a>
 
     </div>
-    <h1 class="text-3xl mb-5">hello, <%=user.name %>
-    </h1>
+    <div class="flex item-start gap-3">
+        <div class="bg-red-600 w-10 h-10 rounded-md overflow-hidden ">
+            <img class="w-full h-full object-cover" src="/images/uploads/<%= user.profilepic  %>" alt="">
+        </div>
+        <h1 class="text-3xl mb-5">hello, <%=user.name %>
+        </h1>
+    </div>
+
     <h5 class="mb-5">you can create a new post</h5>
     <form action="/post" method="post">
         <textarea placeholder="whats on your mind"
