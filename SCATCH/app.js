@@ -14,12 +14,13 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, "public")));
-app.set("view engin", "ejs");
+app.set("view engine", "ejs");
 app.use(
   expressSession({
     resave: false,
     saveUninitialized: false,
-    secret: process.env.EXRESS_SESSION_SECRET,
+    secret: process.env.EXPRESS_SESSION_SECRET,
+    cookie: { secure: process.env.NODE_ENV === "production" }, // Ensure it's true in production
   })
 );
 app.use(flash());

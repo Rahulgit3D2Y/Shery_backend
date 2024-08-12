@@ -27,4 +27,9 @@ router.post("/create", async (req, res) => {
   res.status(200).send(createdOwner);
 });
 
+router.get("/admin", (req, res) => {
+  let success = req.flash("success");
+  res.render("createproducts", { sucess });
+});
+
 module.exports = router;
