@@ -13,7 +13,7 @@ const userSchema = mongoose.Schema({
     type: Array,
     default: [],
   },
-  contact: number,
+  contact: Number,
   picture: String,
 });
 
